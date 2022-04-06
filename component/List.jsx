@@ -17,16 +17,14 @@ export default function List() {
     const renderItem = ({ item }) => {
         return (
             <View>
-                <Text>{item}</Text>
+                <Text>{item.name.common + ": " + item.capital}</Text>
             </View>
         );
     }
 
     return (
         <FlatList
-            data={countries.map((country) => {
-                return country.name.common + ": " + country.capital
-            })}
+            data={countries}
             renderItem={renderItem}
             keyExtractor={(item, index) => index.toString()}
         />
